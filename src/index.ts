@@ -40,7 +40,7 @@ class BlockChain {
     this.blocks.push(newBlock);
   }
   public getBlocks() {
-    return this.blocks;
+    return [...this.blocks];
   }
 }
 
@@ -48,5 +48,5 @@ const blockChain = new BlockChain();
 blockChain.addBlock("First");
 blockChain.addBlock("Second");
 blockChain.addBlock("Third");
-
+blockChain.getBlocks().push(new Block("xx", 1, "HACKED")); // Unauthorized access
 console.log(blockChain.getBlocks());
